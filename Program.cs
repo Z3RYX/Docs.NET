@@ -3,6 +3,7 @@ using Discord.Commands;
 using Discord.WebSocket;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 using Traceback;
@@ -19,26 +20,30 @@ namespace docsNET
 
         public async Task MainAsync()
         {
-            string TOKEN = Console.ReadLine();
-            Console.Clear();
+            Logger.Write("Booting up");
+            string TOKEN = File.ReadAllLines("TOKEN.txt")[0];
+            Logger.Write("Token loaded");
             _client = new DiscordSocketClient();
+            Logger.Write("Client initialized");
             _commands = new CommandService();
+            Logger.Write("Command Service initialized");
 
             _services = new ServiceCollection()
                 .AddSingleton(_client)
                 .AddSingleton(_commands)
                 .BuildServiceProvider();
-
+            Logger.Write("Service initialized");
             _client.Log += Log;
 
             IActivity activity = new Game("Prefix: c#") as IActivity;
             await _client.SetActivityAsync(activity);
-
+            Logger.Write("Game set");
             await RegisterCommandsAsync();
 
             await _client.LoginAsync(TokenType.Bot, TOKEN);
-
+            Logger.Write("Client logged in");
             await _client.StartAsync();
+            Logger.Write("Client started");
 
             await Task.Delay(-1);
         }

@@ -131,5 +131,12 @@ namespace docsNET
 
             Rep($"{docs.docClass}\n{docs.docDesc}\n{docs.docLink}");
         }
+
+        [Command("end"), RequireOwner]
+        public async Task EndAsync()
+        {
+            await ReplyAsync("Goodbye");
+            Environment.Exit(0);
+        }
     }
 }
