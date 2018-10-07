@@ -5,6 +5,7 @@ It's core feature is to show a short description of a method or class and link y
 
 # Invite
 To invite Docs.NET to your server use the link below
+
 https://discordapp.com/api/oauth2/authorize?client_id=490558394747584544&permissions=18432&scope=bot
 
 # Trvia
