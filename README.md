@@ -10,7 +10,6 @@ https://discordapp.com/api/oauth2/authorize?client_id=490558394747584544&permiss
 
 # Trvia
 - The link to zeryx.xyz/docs/cs that is shown when the bot can't find the file results in a 404 for now
-- The bot token is input via Console.ReadLine()
 - This is the first time that I work with JSON files.
 
 # Data Collection
