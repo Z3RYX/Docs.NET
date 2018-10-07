@@ -14,6 +14,7 @@ https://discordapp.com/api/oauth2/authorize?client_id=490558394747584544&permiss
 
 # Data Collection
 By using Docs.NET you agree that the bot collects some data for debugging purposes.
+
 Collected data is:
 - Username + descriminator of the user who called a command
 - Name of the server where the command was called
